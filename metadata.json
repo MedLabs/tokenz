@@ -3,7 +3,7 @@
   "KPlugin": {
     "Authors": [
       {
-        "Name": "Tokenz contributors"
+        "Name": "Bensaad.dev"
       }
     ],
     "Category": "System Information",
@@ -15,7 +15,7 @@
     "Name": "Tokenz",
     "Name[hu]": "Tokenz",
     "Version": "0.1.0",
-    "Website": "https://github.com/tokenz/plasma-tokenz"
+    "Website": "https://github.com/medlabs/tokenz.git"
   },
   "X-Plasma-API-Minimum-Version": "6.0"
 }
