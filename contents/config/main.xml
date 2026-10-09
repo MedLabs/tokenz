@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name=""/>
+
+    <group name="General">
+        <entry name="language" type="String">
+            <label>UI language</label>
+            <default>system</default>
+        </entry>
+        <entry name="refreshInterval" type="Int">
+            <label>Refresh interval in minutes</label>
+            <default>5</default>
+        </entry>
+
+        <!--
+            The list of configured AI agents / accounts, stored as a JSON array
+            of objects:
+              { "id": "codex", "enabled": true, "engine": "auto",
+                "account": "", "source": "auto", "label": "" }
+        -->
+        <entry name="agents" type="String">
+            <label>Configured AI agents and accounts (JSON)</label>
+            <default>[{"id":"codex","enabled":true,"engine":"auto","account":"","source":"auto","label":""},{"id":"kimi","enabled":true,"engine":"auto","account":"","source":"auto","label":""},{"id":"antigravity","enabled":true,"engine":"auto","account":"","source":"auto","label":""},{"id":"opencode","enabled":true,"engine":"auto","account":"","source":"auto","label":""}]</default>
+        </entry>
+
+        <!-- Panel display -->
+        <entry name="panelStyle" type="String">
+            <label>Panel display style (icon, percent, text, circle)</label>
+            <default>percent</default>
+        </entry>
+        <entry name="showIcon" type="Bool">
+            <label>Show provider icon in the panel</label>
+            <default>true</default>
+        </entry>
+        <entry name="showLabel" type="Bool">
+            <label>Show provider name in the panel</label>
+            <default>false</default>
+        </entry>
+        <entry name="panelLayout" type="String">
+            <label>Panel layout direction (horizontal or vertical)</label>
+            <default>horizontal</default>
+        </entry>
+        <entry name="backgroundOpacity" type="Double">
+            <label>Background opacity on the desktop (0.0 = transparent)</label>
+            <default>0.0</default>
+        </entry>
+        <entry name="notifyHigh" type="Bool">
+            <label>Notify when a usage window crosses the warning threshold</label>
+            <default>false</default>
+        </entry>
+        <entry name="warnThreshold" type="Int">
+            <label>Warning threshold percent</label>
+            <default>80</default>
+        </entry>
+    </group>
+</kcfg>

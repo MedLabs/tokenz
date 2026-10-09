@@ -1,0 +1,21 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "Tokenz contributors"
+      }
+    ],
+    "Category": "System Information",
+    "Description": "Track AI coding-agent usage limits (Codex, Kimi Code, Antigravity, OpenCode, Claude, Gemini and more) for every account you use, right in your panel.",
+    "EnabledByDefault": true,
+    "Icon": "tokenz",
+    "Id": "org.tokenz.plasma",
+    "License": "GPL-3.0-or-later",
+    "Name": "Tokenz",
+    "Name[hu]": "Tokenz",
+    "Version": "0.1.0",
+    "Website": "https://github.com/tokenz/plasma-tokenz"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}
