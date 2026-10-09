@@ -7,6 +7,8 @@ Tokenz shows how much of each agent's rate window you have consumed
 you hit the wall. It supports multiple accounts per agent and auto-detects
 the agents installed on your machine.
 
+![Tokenz panel and settings](tokenz_screenshots.png)
+
 ```
 Codex 20%  ·  Antigravity 64%  ·  OpenCode 12%
 ```
