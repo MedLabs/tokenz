@@ -274,7 +274,14 @@ KCM.SimpleKCM {
                                 page.save()
                             }
                         }
+                        Components.ProviderIcon {
+                            visible: Providers.hasIcon(agentFrame.pid)
+                            providerId: agentFrame.pid
+                            size: Kirigami.Units.iconSizes.smallMedium
+                            Layout.alignment: Qt.AlignVCenter
+                        }
                         Components.BrandBadge {
+                            visible: !Providers.hasIcon(agentFrame.pid)
                             brandColor: Providers.color(agentFrame.pid)
                             text: Providers.short(agentFrame.pid)
                             size: Kirigami.Units.iconSizes.smallMedium

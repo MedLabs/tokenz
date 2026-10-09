@@ -22,6 +22,7 @@ RowLayout {
     property bool showIcon: true
     property bool showLabel: false
     property string panelStyle: "percent"
+    property bool hasBrandIcon: false
 
     spacing: Kirigami.Units.smallSpacing
 
@@ -29,6 +30,8 @@ RowLayout {
     readonly property bool isOk: !!model && model.state === Usage.STATE.ok
     readonly property bool isPending: !model || model.state === Usage.STATE.loading
     readonly property bool isCircle: indicator.panelStyle === "circle"
+    readonly property bool isBrandIcon: indicator.panelStyle === "brandicon"
+    readonly property bool showBrandIcon: indicator.isBrandIcon && indicator.hasBrandIcon
     readonly property real percent: primary ? primary.percent : 0
     readonly property color stateColor: {
         if (!isOk) return Kirigami.Theme.disabledTextColor;
@@ -42,8 +45,18 @@ RowLayout {
         return "!"
     }
 
+    ProviderIcon {
+        visible: indicator.showBrandIcon
+        providerId: indicator.providerId
+        size: Kirigami.Units.iconSizes.smallMedium
+        opacity: indicator.isOk ? 1.0 : 0.5
+        Layout.alignment: Qt.AlignVCenter
+    }
+
     Text {
         visible: indicator.showIcon && !indicator.isCircle
+            && indicator.panelStyle !== "text"
+            && (!indicator.isBrandIcon || !indicator.hasBrandIcon)
         text: indicator.shortText
         color: indicator.brandColor
         opacity: indicator.isOk ? 1.0 : 0.5

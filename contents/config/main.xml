@@ -28,7 +28,7 @@
 
         <!-- Panel display -->
         <entry name="panelStyle" type="String">
-            <label>Panel display style (icon, percent, text, circle)</label>
+            <label>Panel display style (brandicon, icon, percent, text, circle, appicon)</label>
             <default>percent</default>
         </entry>
         <entry name="showIcon" type="Bool">

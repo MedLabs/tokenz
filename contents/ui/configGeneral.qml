@@ -22,7 +22,7 @@ KCM.SimpleKCM {
     property bool cfg_notifyHigh
     property int cfg_warnThreshold
 
-    readonly property var panelStyles: ["icon", "percent", "text", "circle", "appicon"]
+    readonly property var panelStyles: ["brandicon", "icon", "percent", "text", "circle", "appicon"]
 
     Kirigami.FormLayout {
         QQC2.ComboBox {
@@ -59,8 +59,8 @@ KCM.SimpleKCM {
 
         QQC2.ComboBox {
             Kirigami.FormData.label: i18n("Style:")
-            model: [i18n("Icon only"), i18n("Icon + percent"), i18n("Percent only"),
-                    i18n("Progress circles"), i18n("Tokenz icon only")]
+            model: [i18n("Brand icons"), i18n("Acronym only"), i18n("Acronym + percent"),
+                    i18n("Percent only"), i18n("Progress circles"), i18n("Tokenz icon only")]
             currentIndex: Math.max(0, panelStyles.indexOf(cfg_panelStyle))
             onActivated: index => { cfg_panelStyle = panelStyles[index] }
         }

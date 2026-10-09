@@ -20,6 +20,7 @@ ColumnLayout {
     property string brandColor: "#888888"
     property string shortText: "?"
     property string accountLabel: ""
+    property bool hasBrandIcon: false
     property var trFn: function(t) { return t }
 
     signal signInRequested()
@@ -40,7 +41,15 @@ ColumnLayout {
         Layout.fillWidth: true
         spacing: Kirigami.Units.smallSpacing
 
+        ProviderIcon {
+            visible: section.hasBrandIcon
+            providerId: section.providerId
+            size: Kirigami.Units.iconSizes.smallMedium
+            Layout.alignment: Qt.AlignVCenter
+        }
+
         BrandBadge {
+            visible: !section.hasBrandIcon
             brandColor: section.brandColor
             text: section.shortText
             dimmed: !section.isOk

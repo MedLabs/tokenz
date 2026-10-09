@@ -204,6 +204,7 @@ PlasmoidItem {
                     showIcon: Plasmoid.configuration.showIcon !== false
                     showLabel: Plasmoid.configuration.showLabel === true
                     panelStyle: Plasmoid.configuration.panelStyle || "percent"
+                    hasBrandIcon: Providers.hasIcon(modelData.id)
                 }
             }
         }
@@ -274,6 +275,7 @@ PlasmoidItem {
                         brandColor: Providers.color(sectionCell.modelData.id)
                         shortText: Providers.short(sectionCell.modelData.id)
                         accountLabel: sectionCell.modelData.label || sectionCell.modelData.account || ""
+                        hasBrandIcon: Providers.hasIcon(sectionCell.modelData.id)
                         trFn: function(t) { return i18n(t) }
                         onSignInRequested: root.launchAuth(sectionCell.modelData.id)
                     }

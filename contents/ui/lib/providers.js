@@ -41,6 +41,25 @@ var DEFAULT_AGENTS = [
     { id: "opencode", enabled: true, engine: "auto", account: "", source: "auto", label: "" }
 ];
 
+// Providers that ship a bundled brand glyph in contents/icons/brands/. Others
+// fall back to the colored acronym badge.
+var BRAND_ICONS = [
+    "codex", "kimi", "antigravity", "opencode", "claude", "gemini",
+    "cursor", "copilot", "openrouter", "zai", "minimax"
+];
+
+function hasIcon(id) {
+    return BRAND_ICONS.indexOf(id) !== -1;
+}
+
+// Solid single-colour silhouettes read optically heavier than line-art marks,
+// so render them slightly smaller to even out the visual weight in the panel.
+var GLYPH_SCALE = { kimi: 0.82, antigravity: 0.82, opencode: 0.8 };
+
+function glyphScale(id) {
+    return GLYPH_SCALE[id] !== undefined ? GLYPH_SCALE[id] : 1.0;
+}
+
 function list() {
     return CATALOG;
 }
